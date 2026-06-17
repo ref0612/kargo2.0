@@ -1,0 +1,201 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * KARGO Design System
+ * Logistics dashboard: precise, dense, trustworthy. Deep ink + electric blue.
+ * Semantic state colors map directly to OT lifecycle.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-info: var(--info);
+  --color-info-foreground: var(--info-foreground);
+  --color-bus: var(--bus);
+  --color-bus-foreground: var(--bus-foreground);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-ink: var(--ink);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --font-display: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  --radius: 0.625rem;
+
+  --background: oklch(0.985 0.003 250);
+  --foreground: oklch(0.18 0.03 260);
+  --surface: oklch(1 0 0);
+  --surface-muted: oklch(0.965 0.008 250);
+  --ink: oklch(0.16 0.03 260);
+
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.18 0.03 260);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.18 0.03 260);
+
+  --primary: oklch(0.52 0.21 258);              /* electric blue */
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: oklch(0.96 0.01 255);
+  --secondary-foreground: oklch(0.22 0.04 260);
+  --muted: oklch(0.96 0.008 255);
+  --muted-foreground: oklch(0.50 0.02 258);
+  --accent: oklch(0.95 0.04 255);
+  --accent-foreground: oklch(0.22 0.05 260);
+
+  --destructive: oklch(0.58 0.22 27);
+  --destructive-foreground: oklch(0.99 0 0);
+  --success: oklch(0.62 0.16 150);
+  --success-foreground: oklch(0.99 0 0);
+  --warning: oklch(0.72 0.17 70);
+  --warning-foreground: oklch(0.18 0.05 60);
+  --info: oklch(0.65 0.13 230);
+  --info-foreground: oklch(0.99 0 0);
+  --bus: oklch(0.55 0.22 295);                  /* purple — bus journey */
+  --bus-foreground: oklch(0.99 0 0);
+
+  --border: oklch(0.92 0.01 255);
+  --input: oklch(0.92 0.01 255);
+  --ring: oklch(0.52 0.21 258);
+
+  --chart-1: oklch(0.52 0.21 258);
+  --chart-2: oklch(0.62 0.16 150);
+  --chart-3: oklch(0.72 0.17 70);
+  --chart-4: oklch(0.55 0.22 295);
+  --chart-5: oklch(0.65 0.13 230);
+
+  --sidebar: oklch(1 0 0);
+  --sidebar-foreground: oklch(0.18 0.03 260);
+  --sidebar-primary: oklch(0.52 0.21 258);
+  --sidebar-primary-foreground: oklch(0.99 0 0);
+  --sidebar-accent: oklch(0.96 0.008 255);
+  --sidebar-accent-foreground: oklch(0.22 0.04 260);
+  --sidebar-border: oklch(0.92 0.01 255);
+  --sidebar-ring: oklch(0.52 0.21 258);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+.dark {
+  --background: oklch(0.16 0.02 260);
+  --foreground: oklch(0.97 0 0);
+  --surface: oklch(0.20 0.025 260);
+  --surface-muted: oklch(0.23 0.025 260);
+  --ink: oklch(0.97 0 0);
+  --card: oklch(0.20 0.025 260);
+  --card-foreground: oklch(0.97 0 0);
+  --popover: oklch(0.20 0.025 260);
+  --popover-foreground: oklch(0.97 0 0);
+  --primary: oklch(0.70 0.18 258);
+  --primary-foreground: oklch(0.15 0.03 260);
+  --secondary: oklch(0.26 0.03 260);
+  --secondary-foreground: oklch(0.97 0 0);
+  --muted: oklch(0.26 0.03 260);
+  --muted-foreground: oklch(0.72 0.02 258);
+  --accent: oklch(0.30 0.04 260);
+  --accent-foreground: oklch(0.97 0 0);
+  --border: oklch(1 0 0 / 0.10);
+  --input: oklch(1 0 0 / 0.15);
+  --ring: oklch(0.70 0.18 258);
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html, body, #root { height: 100%; }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-display);
+    -webkit-font-smoothing: antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-thumb { background: color-mix(in oklab, var(--muted-foreground) 30%, transparent); border-radius: 8px; }
+  ::-webkit-scrollbar-thumb:hover { background: color-mix(in oklab, var(--muted-foreground) 50%, transparent); }
+}
+
+/* ====== Utilities ====== */
+@utility kargo-card {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.03);
+}
+
+@utility kargo-kpi {
+  background: linear-gradient(180deg, var(--surface) 0%, var(--surface-muted) 100%);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 14px 16px;
+}
+
+@utility kargo-bar {
+  background-color: oklch(0.16 0.025 260);
+  color: oklch(0.97 0 0);
+}
+
+@utility scan-pulse {
+  animation: scanpulse 1.4s ease-in-out infinite;
+}
+@keyframes scanpulse {
+  0%,100% { opacity: 0.4; transform: scaleY(0.8); }
+  50% { opacity: 1; transform: scaleY(1.6); }
+}
+
+@utility truck-move {
+  animation: truckmove 6s linear infinite;
+}
+@keyframes truckmove {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(8px); }
+}
+
+@utility shimmer {
+  background: linear-gradient(90deg, transparent 0%, color-mix(in oklab, var(--muted-foreground) 15%, transparent) 50%, transparent 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s linear infinite;
+}
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
